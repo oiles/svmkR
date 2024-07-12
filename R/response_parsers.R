@@ -40,6 +40,7 @@ process_matrix <- function(surv_obj, question) {
           out_id[[col_id]] <- answer_text
     } else {
       print(answer$row_id)
+      print(surv_obj$answers)
       print(surv_obj$answers[[answer$row_id]])
       question_text = paste0(surv_obj$questions[[question_id]], " - ", surv_obj$answers[[answer$row_id]])
       print(question_text)
