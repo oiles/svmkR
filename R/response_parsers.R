@@ -40,7 +40,8 @@ process_matrix <- function(surv_obj, question) {
           out_id[[col_id]] <- answer_text
     } else {
       print(answer$row_id)
-      if(is.null(answer$row_id) {return(list(name=out_named, id=out_id))}
+      if(is.null(answer$row_id) {
+        return(list(name=out_named, id=out_id))}
       question_text = paste0(surv_obj$questions[[question_id]], " - ", surv_obj$answers[[answer$row_id]])
       print(question_text)
       col_id = paste0(question_id, "_", answer$row_id)
@@ -53,7 +54,6 @@ process_matrix <- function(surv_obj, question) {
 }
 
 process_multiple_choice <- function(surv_obj, question) {
-  print("multiple choice")
   question_id <- question$id
   family <- surv_obj$families[[question_id]]
   out_named <- list()
@@ -78,7 +78,6 @@ process_multiple_choice <- function(surv_obj, question) {
 }
 
 process_single_choice <- function(surv_obj, question) {
-  print("single choice")
   question_id <- question$id
   family <- surv_obj$families[[question_id]]  
   answer <- question$answers[[1]]
@@ -100,7 +99,6 @@ process_single_choice <- function(surv_obj, question) {
 }
 
 process_open_ended <- function(surv_obj, question) {
-  print("open ended")
   question_id = question$id
   col_id = question_id
   family = surv_obj$families[[question_id]]  
