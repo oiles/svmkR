@@ -17,7 +17,6 @@ make_output_id <- function(col_id, answer_text) {
 process_matrix <- function(surv_obj, question) {
   print("matrix")
   question_id <- question$id
-  print(question_id)
   family <- surv_obj$families[[question_id]]
   subtype <- surv_obj$subtypes[[question_id]]
   out_named <- list()
@@ -40,7 +39,8 @@ process_matrix <- function(surv_obj, question) {
           out_named[[question_text]] <- answer_text
           out_id[[col_id]] <- answer_text
     } else {
-      print(answer)
+      print(answer$row_id)
+      print(surv_obj$answers[[answer$row_id]])
       question_text = paste0(surv_obj$questions[[question_id]], " - ", surv_obj$answers[[answer$row_id]])
       print(question_text)
       col_id = paste0(question_id, "_", answer$row_id)
