@@ -15,6 +15,7 @@ make_output_id <- function(col_id, answer_text) {
 }
 
 process_matrix <- function(surv_obj, question) {
+  print("matrix")
   question_id <- question$id
   family <- surv_obj$families[[question_id]]
   subtype <- surv_obj$subtypes[[question_id]]
@@ -48,6 +49,7 @@ process_matrix <- function(surv_obj, question) {
 }
 
 process_multiple_choice <- function(surv_obj, question) {
+  print("multiple choice")
   question_id <- question$id
   family <- surv_obj$families[[question_id]]
   out_named <- list()
@@ -72,6 +74,7 @@ process_multiple_choice <- function(surv_obj, question) {
 }
 
 process_single_choice <- function(surv_obj, question) {
+  print("single choice")
   question_id <- question$id
   family <- surv_obj$families[[question_id]]  
   answer <- question$answers[[1]]
@@ -93,6 +96,7 @@ process_single_choice <- function(surv_obj, question) {
 }
 
 process_open_ended <- function(surv_obj, question) {
+  print("open ended")
   question_id = question$id
   col_id = question_id
   family = surv_obj$families[[question_id]]  
